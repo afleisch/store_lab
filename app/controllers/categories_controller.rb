@@ -1,13 +1,13 @@
 class CategoriesController < ApplicationController
   def index
-  	@categories = Category.all
+    @categories = Category.all
 
   end
 
   def show
-  	id = params[:id]
-  	@category = Category.find(id)
-  	@products = @category.products
+    id = params[:id]
+    @category = Category.find(id)
+    @products = @category.products
 
   end
 
@@ -17,31 +17,29 @@ class CategoriesController < ApplicationController
   end
 
   def create
-  	category = params[:category].permit(:name)
-  	Category.create(category)
-  	redirect_to "/categories"
-
+    category = params[:category].permit(:name)
+    Category.create(category)
+    redirect_to "/categories"
   end
 
   def edit
-  	category_id = params[:id]
-  	@category = Category.find(category_id)
-  	render :edit
+    category_id = params[:id]
+    @category = Category.find(category_id)
+    render :edit
   end
 
   def update
-  	category_id = params[:id]
-  	category = Category.find(category_id)
-  	updated_attributes = params.require(:category).permit(:name)
-  	category.update_attributes(updated_attributes)
-  	redirect_to "/categories/"
+    category_id = params[:id]
+    category = Category.find(category_id)
+    updated_attributes = params.require(:category).permit(:name)
+    category.update_attributes(updated_attributes)
+    redirect_to "/categories/"
   end
 
   def destroy
-  @category = Category.find(params[:id])
-  @category.destroy
- 
-  redirect_to categories_path
+    @category = Category.find(params[:id])
+    @category.destroy
+    redirect_to categories_path
   end
 
 

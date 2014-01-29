@@ -11,6 +11,10 @@ class CategoriesController < ApplicationController
 
   end
 
+  def new
+    @category = Category.new
+    render :new
+  end
 
 
 

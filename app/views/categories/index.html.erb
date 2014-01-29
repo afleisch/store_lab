@@ -1,1 +1,10 @@
-index.html.erb
+<h1>Categories</h1>
+
+<ul>
+<% @categories.each do |c| %>
+  <li>
+    <%= c.name %> 
+  </li>
+
+<% end %>
+ </ul>

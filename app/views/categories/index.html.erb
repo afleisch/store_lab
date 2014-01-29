@@ -6,7 +6,7 @@
     <li>
       <%= link_to c.name, category_path(c) %><br>
       <%= button_to 'Delete', category_path(c), method: :delete %>
-   
+      <%= button_to 'Edit', category_path(c), method: :put %>  	
     </li>
   <% end %>
 </ul>

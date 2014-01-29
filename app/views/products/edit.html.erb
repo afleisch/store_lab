@@ -1,7 +1,7 @@
 <form action="/products/<%="#{@product.id}"%>" method="post">
 	<input name="_method" type="hidden" value="put" />   
     <input type="text" name="product[name]" value="<%= @product.name %>">
-   
+ 
     <%= token_tag form_authenticity_token %>
 
     <button> Update Product </button>

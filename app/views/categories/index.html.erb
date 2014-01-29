@@ -4,7 +4,9 @@
 <ul>
   <% @categories.each do |c| %>
     <li>
-      <%= link_to c.name, category_path(c) %>
+      <%= link_to c.name, category_path(c) %><br>
+      
     </li>
   <% end %>
 </ul>
+

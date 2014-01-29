@@ -1,0 +1,8 @@
+<form action="/categories/<%="#{@category.id}"%>" method="post">
+	<input name="_method" type="hidden" value="put" />   
+    <input type="text" name="category[name]" value="<%= @category.name %>">
+   
+    <%= token_tag form_authenticity_token %>
+
+    <button> Update Category </button>
+</form>

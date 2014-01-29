@@ -23,6 +23,20 @@ class CategoriesController < ApplicationController
 
   end
 
+  def edit
+  	category_id = params[:id]
+  	@category = Category.find(category_id)
+  	render :edit
+  end
+
+  def update
+  	category_id = params[:id]
+  	category = Category.find(category_id)
+  	updated_attributes = params.require(:category).permit(:name)
+  	category.update_attributes(updated_attributes)
+  	redirect_to "/categories/"
+  end
+
 
 
 end

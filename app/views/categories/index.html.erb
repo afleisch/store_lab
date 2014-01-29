@@ -1,12 +1,15 @@
-
+<div class="container">
 
  <h3>Categories</h3>
 <ul>
   <% @categories.each do |c| %>
     <li>
       <%= link_to c.name, category_path(c) %><br>
-      
+      <%= button_to 'Delete', category_path(c), method: :delete %>
+   
     </li>
   <% end %>
 </ul>
+
+</div>
 

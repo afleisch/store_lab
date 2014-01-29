@@ -1,0 +1,11 @@
+<h1> Products in <%= @category.name %> </h1>
+
+<ul>
+  <% @products.each do |p| %>
+   <li>
+   	<%= link_to p.name, product_path(p) %>
+   </li>
+  <% end %>
+
+ </ul>
+ 

@@ -42,6 +42,10 @@ class ProductsController < ApplicationController
  
   redirect_to products_path
   end
-
+ 
+  def assign_category
+  #assign selected category(ies) to product
+  redirect_to "/products"
+  end
 
 end
